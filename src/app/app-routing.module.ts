@@ -10,7 +10,7 @@ import {ViewQuestionsComponent} from './admin/view-questions/view-questions.comp
 import { SearchreportsComponent } from './admin/searchreports/searchreports.component';
 import { RegisteruserComponent } from './user/registeruser/registeruser.component';
 import { UserloginComponent } from './user/userlogin/userlogin.component';
-import {DisplayreportsComponent} from "./admin/displayreports/displayreports.component";
+
 
 
 
@@ -18,7 +18,7 @@ const routes: Routes = [
   {path:'remove',component:RemovequestionComponent},
   {path:'add',component:AddquestionComponent},
   {path:'',component:SearchreportsComponent},
-  {path:"displayreports",component:DisplayreportsComponent},
+ 
   {path:"AdminLogin",component:AdminloginComponent},
   {path:"AdminPage",component:AdminpageComponent},
   {path:"UserLogin",component:UserloginComponent},

@@ -18,15 +18,21 @@ export class SearchreportsComponent implements OnInit {
 
   courses : Icourse[] = [];
   Courseid: number;
-
-  users:IUser[]=[];
-  
-    
   Userid:number;
   State:String;
   City:String;
   Minimum_marks:string;
 
+  users:IUser[]=[];
+  
+  Reports :Report ={
+    State:null,
+    City:null,
+    Course_name:null,
+    Minimum_marks:null,
+}
+
+  
   
   
   
@@ -46,14 +52,15 @@ constructor(private route: Router,private router:ActivatedRoute,private question
   //       }
   //     });
   //   }
-  ViewResult(Courseid,State,City,Minimum_marks)
+  students:any = []; 
+  ViewResult(Repo:Report)
   {
-    this.questionserv.ViewResult(Courseid,State,City,Minimum_marks).subscribe((data)=>{
+    this.questionserv.ViewResult(Repo).subscribe((data)=>{
             if(data)
             {
-              console.log(this.questionserv.ViewResult(Courseid,State,City,Minimum_marks));
-              console.log(data);
               
+              console.log(data);
+              this.students = data;
              
               
               
@@ -76,5 +83,6 @@ constructor(private route: Router,private router:ActivatedRoute,private question
         this.users = data;
     }) 
   }
+
 
 }

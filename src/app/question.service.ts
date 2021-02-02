@@ -41,9 +41,9 @@ export class QuestionService {
       return this.http.post<IQuestion>(this.url+"/postquestion",que,this.httpOptions);
   }
 
-  ViewResult(Courseid,State,City,Minimum_marks):Observable<Searchstudent[]>{
+  ViewResult(Repo:Report):Observable<Searchstudent[]>{
 
-    return this.http.get<Searchstudent[]>(this.url2+"/Reports?"+"state="+State+"&city="+City+"&Course_name="+Courseid+"&Minimum_marks=18");
+    return this.http.get<Searchstudent[]>(this.url2+"/Reports?"+"state="+Repo.State+"&city="+Repo.City+"&Course_name="+Repo.Course_name+"&Minimum_marks=18");
   
   }
 

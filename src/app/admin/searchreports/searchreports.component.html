@@ -1,11 +1,11 @@
 <div class="container">
-    <form class="form-horizontal" role="form" #userform='ngForm'(ngSubmit)='ViewResult(Courseid,State,City,Minimum_marks) '>
+    <form class="form-horizontal" role="form" #userform='ngForm'(ngSubmit)='ViewResult(Reports) '>
 
     <div class='form-group'>
         
             <div class="col-sm-9" class="b">
                 <label>Select course</label>
-                <select id="Course_id" class="form-control"  name="Course_id" [(ngModel)] = "Courseid">
+                <select id="Course_id" class="form-control"  name="Course_id" [(ngModel)] = "Reports.Course_name">
                     <option value=" " selected >Select a course</option>
                     <option *ngFor="let course of courses"  value={{course.Course_name}}>{{course.Course_name}}</option>
                 </select>
@@ -13,30 +13,70 @@
 
             <div class="col-sm-9" class="b">
                 <label>Select state</label>
-                <select id="Course_id" class="form-control"  name="Userid" [(ngModel)] = "State">
+                <select id="Course_id" class="form-control"  name="Userid" [(ngModel)] = "Reports.State">
                     <option value=" " selected >Select a course</option>
                     <option *ngFor="let user of users"  value={{user.State}}>{{user.State}}</option>
                 </select>
             </div>
             <div class="col-sm-9" class="b">
                 <label>Select city</label>
-                <select id="Course_id" class="form-control"  name="Userid" [(ngModel)] = "City">
+                <select id="Course_id" class="form-control"  name="Userid" [(ngModel)] = "Reports.City">
                     <option value=" " selected >Select a course</option>
                     <option *ngFor="let user of users"  value={{user.City}}>{{user.City}}</option>
                 </select>
             </div>
             <div class="col-sm-9" class="b">
                 <label>Marks</label>
-                <input type="text" size="80%" id="name2" placeholder="Minimum_marks" class="form-control" name= "second" required autofocus [(ngModel)]="Minimum_marks" />
+                <input type="text" size="80%" id="name2" placeholder="Minimum_marks" class="form-control" name= "second" required autofocus [(ngModel)]="Reports.Minimum_marks" />
             </div>
             
-            <button type="submit" class="btn btn-primary btn-lg btn-block"  >Add Question</button>
+            <button type="submit" class="btn btn-primary btn-lg btn-block"  >View Report</button>
     
     
                           
         
       </div>
     </form>
-    </div>
+    <body>
+       
+        <tbody>
+            <tr>
+                <td>Fullname</td>
+                <td>Email</td>
+                <td>City</td>
+                <td>State</td>
+
+                
+                
+            
+                
+                
+            
+                
+            
+            </tr>
+            <tr *ngFor="let s of students">
+                <td>{{s.Fullname}}</td>
+                <td>{{s.Email}}</td>
+                <td>{{s.City}}</td>
+                <td>{{s.State}}</td>
+
+                
+                
+            
+                
+                
+            
+                
+            
+            </tr>
+        </tbody>
+        
+        </body>
+        
+       
+    
+        
+    
      
      
