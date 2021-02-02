@@ -1,0 +1,126 @@
+
+<body>
+    <div class="container">
+        <form class="form-horizontal" role="form" #userform='ngForm'(ngSubmit)='saveQuestion(Question)'>
+            <h3 style="text-align: center;">Add Question</h3>
+            <br>
+
+            <div class="form-group" [class.has.error]="idcontrol.touched && idcontrol.invalid">
+                
+                <div class="col-sm-9" class="b">
+                    <input type="text" size="80%" id="id" placeholder="Question id" class="form-control" name= "Questionid" required autofocus [(ngModel)]='Question.Question_id'  #idcontrol='ngModel'/>
+                </div>
+                <span class='help-block alert-danger' *ngIf='idcontrol.touched && idcontrol.invalid'>
+                 Question Id cannot be blank
+                </span>                
+            </div>
+
+            <div class="form-group" [class.has.error]="namecontrol.touched && namecontrol.invalid">
+               
+                <div class="col-sm-9" class="b">
+                    <select id="Course_id" class="form-control"  name="Course_id" [(ngModel)] = "Courseid">
+                        <option value=" " selected >Select a course</option>
+                        <option *ngFor="let course of courses"  value={{course.Course_id}}>{{course.Course_name}}</option>
+                    </select>
+                </div>
+                
+                <span class='help-block alert-danger' *ngIf='namecontrol.touched && namecontrol.invalid'>
+                    Course cannot be blank
+                </span>                
+            </div>
+
+            <div class="form-group" [class.has.error]="namecontrol.touched && namecontrol.invalid">
+                
+                <div class="col-sm-9" class="b">
+                    <input type="text" size="80%" id="name2" placeholder="Question Number" class="form-control" name= "second" required autofocus [(ngModel)]='Question.Question_No'  #namecontrol='ngModel'/>
+                </div>
+                <span class='help-block alert-danger' *ngIf='namecontrol.touched && namecontrol.invalid'>
+                    Question number cannot be blank
+                </span>                
+            </div>
+            
+            <div class="form-group" [class.has.error]="emailcontrol.touched && emailcontrol.invalid">
+                
+                <div class="col-sm-9" class="b">
+                    <input type='text' id='email' placeholder="QUESTION" name='email' class="form-control" required [(ngModel)]='Question.Question1' #emailcontrol='ngModel'/>
+                </div>
+                <span class='help-block alert-danger' *ngIf='emailcontrol.touched && emailcontrol.invalid'>
+                    Question cannot be blank
+                </span>
+            </div>
+
+            <div class="form-group" [class.has.error]="passcontrol.touched && passcontrol.invalid">
+               
+                <div class="col-sm-9" class="b">
+                    <input type="text" id="password" placeholder="Option1" class="form-control"  name='pass' required [(ngModel)]='Question.Option_1' #passcontrol='ngModel'/>
+                </div>
+                <span class='help-block alert-danger' *ngIf='passcontrol.touched && passcontrol.invalid'>
+                    Options cannot be blank
+                </span>
+            </div>  
+
+            <div class="form-group" [class.has.error]="passcontrol.touched && passcontrol.invalid">
+               
+                <div class="col-sm-9" class="b">
+                    <input type="text" id="password" placeholder="Option2" class="form-control"  name='pass' required [(ngModel)]='Question.Option_2' #passcontrol='ngModel'/>
+                </div>
+                <span class='help-block alert-danger' *ngIf='passcontrol.touched && passcontrol.invalid'>
+                    Options cannot be blank
+                </span>
+            </div> 
+
+
+            <div class="form-group" [class.has.error]="passcontrol.touched && passcontrol.invalid">
+               
+                <div class="col-sm-9" class="b">
+                    <input type="text" id="password" placeholder="Option3" class="form-control"  name='pass' required [(ngModel)]='Question.Option_3' #passcontrol='ngModel'/>
+                </div>
+                <span class='help-block alert-danger' *ngIf='passcontrol.touched && passcontrol.invalid'>
+                    Options cannot be blank
+                </span>
+            </div> 
+
+            <div class="form-group" [class.has.error]="passcontrol.touched && passcontrol.invalid">
+               
+                <div class="col-sm-9" class="b">
+                    <input type="text" id="password" placeholder="Option4" class="form-control"  name='pass' required [(ngModel)]='Question.Option_4' #passcontrol='ngModel'/>
+                </div>
+                <span class='help-block alert-danger' *ngIf='passcontrol.touched && passcontrol.invalid'>
+                    Options cannot be blank
+                </span>
+            </div> 
+
+            
+            <div class="form-group" [class.has.error]="mobilecontrol.touched && mobilecontrol.invalid">
+                
+                <div class="col-sm-9" class="b">
+                    <input type="phoneNumber" id="phoneNumber" placeholder="Level" name="phoneNumber " class="form-control" required [(ngModel)]='Question.Level_id' #mobilecontrol='ngModel'/>
+                    
+                </div>
+                <span class='help-block alert-danger' *ngIf='mobilecontrol.touched && mobilecontrol.invalid'>
+                    Level_id cannot be blank
+                </span>
+            </div>
+
+            <div class="form-group" [class.has.error]="citycontrol.touched && citycontrol.invalid">
+                
+                <div class="col-sm-9" class="b">
+                    <input type="text" id="city" class="form-control" name="city" placeholder="Correct Answer" required [(ngModel)]='Question.Correct_Answer' #citycontrol='ngModel'/>
+                  
+                </div>
+                <span class='help-block alert-danger' *ngIf='citycontrol.touched && citycontrol.invalid'>
+                    Correct answer cannot be blank
+                </span>
+            </div>
+            <br>
+            
+            
+            
+            <button type="submit" class="btn btn-primary btn-lg btn-block" [disabled]='userform.invalid'>Add Question</button>
+        
+            <br>
+           
+        </form>
+    </div>
+    
+</body>  

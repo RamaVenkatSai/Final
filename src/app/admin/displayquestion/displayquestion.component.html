@@ -1,0 +1,33 @@
+<body>
+        <br>
+        <button type="submit" class="btn btn-dark btn-lg"><a style="color: white;" routerLink="/add" routerLinkActive="active">Add a question</a></button>
+        <br><br>
+        <table class="table">
+        
+            
+            <tbody>
+                <tr *ngFor="let Q of Questions">
+                    <td>{{Q.Question_id}}</td>
+                    <td>{{Q.Question1}}</td>
+                    <td>{{Q.Option_1}}</td>
+                    <td>{{Q.Option_2}}</td>
+                    <td>{{Q.Option_3}}</td>
+                    <td>{{Q.Option_4}}</td>
+                    
+                    
+                <td> <button type="button" class="btn btn-dark btn-lg" (click)="deleteQuestion(Q.Question_id)">Remove</button></td>
+                    
+                    <td>
+                        
+                    
+                    
+                    </td>
+                
+                    
+                
+                </tr>
+            </tbody>
+            
+        </table>
+</body>
+

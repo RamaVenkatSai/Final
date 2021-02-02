@@ -1,0 +1,120 @@
+
+
+
+ <body>
+    <div class="container">
+        <form class="form-horizontal" role="form" #userform='ngForm'(ngSubmit)='saveUser(user)'>
+            <h3 style="text-align: center;">Register user</h3>
+
+            <div class="form-group" [class.has.error]="namecontrol.touched && namecontrol.invalid">
+                
+                <div class="col-sm-9" class="b">
+                    <input type="text" size="80%" id="id" placeholder="User id" class="form-control" name= "userid" required autofocus [(ngModel)]='user.User_id'  #namecontrol='ngModel'/>
+                </div>
+                <span class='help-block alert-danger' *ngIf='namecontrol.touched && namecontrol.invalid'>
+                 Id cannot be blank
+                </span>                
+            </div>
+
+            <div class="form-group" [class.has.error]="namecontrol.touched && namecontrol.invalid">
+               
+                <div class="col-sm-9" class="b">
+                    <input type="text" size="80%" id="name" placeholder="FirstName" class="form-control" name= "first" required autofocus [(ngModel)]='user.Fullname'  #namecontrol='ngModel'/>
+                </div>
+                <span class='help-block alert-danger' *ngIf='namecontrol.touched && namecontrol.invalid'>
+                    FirstName cannot be blank
+                </span>                
+            </div>
+            <div class="form-group" [class.has.error]="namecontrol.touched && namecontrol.invalid">
+                
+                <div class="col-sm-9" class="b">
+                    <input type="text" size="80%" id="name2" placeholder="SecondName" class="form-control" name= "second" required autofocus [(ngModel)]='user.Secondname'  #namecontrol='ngModel'/>
+                </div>
+                <span class='help-block alert-danger' *ngIf='namecontrol.touched && namecontrol.invalid'>
+                    SecondName cannot be blank
+                </span>                
+            </div>
+            
+            <div class="form-group" [class.has.error]="emailcontrol.touched && emailcontrol.invalid">
+                
+                <div class="col-sm-9" class="b">
+                    <input type='text' id='email' placeholder="Email" name='email' class="form-control" required [(ngModel)]='user.Email' #emailcontrol='ngModel'/>
+                </div>
+                <span class='help-block alert-danger' *ngIf='emailcontrol.touched && emailcontrol.invalid'>
+                    Email cannot be blank
+                </span>
+            </div>
+            <div class="form-group" [class.has.error]="passcontrol.touched && passcontrol.invalid">
+               
+                <div class="col-sm-9" class="b">
+                    <input type="password" id="password" placeholder="Password" class="form-control"  name='pass' required [(ngModel)]='user.Password' #passcontrol='ngModel'/>
+                </div>
+                <span class='help-block alert-danger' *ngIf='passcontrol.touched && passcontrol.invalid'>
+                    password cannot be blank
+                </span>
+            </div>        
+            
+            <div class="form-group" [class.has.error]="mobilecontrol.touched && mobilecontrol.invalid">
+                
+                <div class="col-sm-9" class="b">
+                    <input type="phoneNumber" id="phoneNumber" placeholder="Phone number" name="phoneNumber " class="form-control" required [(ngModel)]='user.Phone_no' #mobilecontrol='ngModel'/>
+                    
+                </div>
+                <span class='help-block alert-danger' *ngIf='mobilecontrol.touched && mobilecontrol.invalid'>
+                    mobile number cannot be blank
+                </span>
+            </div>
+
+            <div class="form-group" [class.has.error]="citycontrol.touched && citycontrol.invalid">
+                
+                <div class="col-sm-9" class="b">
+                    <input type="text" id="city" class="form-control" name="city" placeholder="city" required [(ngModel)]='user.City' #citycontrol='ngModel'/>
+                  
+                </div>
+            </div>
+            <div class="form-group" >
+                
+                <div class="col-sm-9" class="b">
+                    <input type='date' id='dob' class="form-control" name='dob' required [(ngModel)]='user.Date_of_Birth' #dobcontrol='ngModel'/>
+                </div>
+            </div>
+            <div class="form-group">
+                
+                <div class="col-sm-9" class="b">
+                    <input type="text" id="State" class="form-control" placeholder="State" name='state' required [(ngModel)]='user.State' #statecontrol='ngModel'/>
+
+                </div>
+                <span class='help-block alert-danger' *ngIf='citycontrol.touched && citycontrol.invalid'>
+                    state cannot be blank
+                </span>
+            </div>
+            
+            <div class="form-group"  [class.has.error]="qualcontrol.touched && qualcontrol.invalid">
+                
+                <div class="col-sm-9" class="b">
+                    <input type="text" id="qualification" class="form-control" name='qual' placeholder="Qualification" required [(ngModel)]='user.Qualification' #qualcontrol='ngModel'/>
+
+                </div>
+                <span class='help-block alert-danger' *ngIf='qualcontrol.touched && qualcontrol.invalid'>
+                    qualification cannot be blank
+                </span>
+            </div>
+            <div class="form-group"  [class.has.error]="yearcontrol.touched && yearcontrol.invalid">
+                
+                <div class="col-sm-9" class="b">
+                    <input type="text" id="yearOfPassing" class="form-control" name='year' placeholder="Year of birth" required [(ngModel)]='user.Year_Of_Passing' #yearcontrol='ngModel'/>
+
+                </div>
+                <span class='help-block alert-danger' *ngIf='yearcontrol.touched && yearcontrol.invalid'>
+                    YearOfPassing cannot be blank
+                 </span>
+            </div>
+            <br>
+            
+            
+            
+            <button type="submit" class="btn btn-primary btn-lg btn-block" [disabled]='userform.invalid'>Register</button>
+            
+        </form>
+    </div>
+</body>  

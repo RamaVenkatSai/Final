@@ -1,0 +1,22 @@
+<div class='container'>
+    <h1><b>REMOVE QUESTIONS</b></h1>
+    <hr/>
+    <form class="form-horizontal" #userform='ngForm'(ngSubmit)='deleteQuestion(Question.Question_id)'>
+     
+<div class='form-group'>
+    <label class="control-label col-sm-2 "for ='id' >Question_id</label>
+    <input type='text' id='id' name='id' required [(ngModel)]='Question.Question_id'/>
+
+</div>
+
+<br>
+<br>
+<div class="form-group">        
+    <div class="col-sm-offset-2 col-sm-10">
+    <button type='submit' class="btn btn-info" [disabled]='userform.invalid' >Delete</button>&nbsp;&nbsp;
+    
+
+</div>
+</div>
+    </form>
+</div>
